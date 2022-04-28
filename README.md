@@ -35,7 +35,7 @@ On sucessful access to Jupyter notebook on the PYNC board using one of the metho
 
 All the steps to setup the board are complete at this stage and it is ready to be tested using a sample test design.
 
-Genesis_demo/Test_demo/PYNQ folder is prebuilt with a test project. The test project is initialized with the ZYNQ processor system which is connected to the basic gates using the GPIOs. The outputs of the gates are connected to the input pins of the GPIO. The following steps list the detailed setup of system, starting from creating a project to running the python script for verification.
+PYNQ_demo/Test_demo/PYNQ folder is prebuilt with a test project. The test project is initialized with the ZYNQ processor system which is connected to the basic gates using the GPIOs. The outputs of the gates are connected to the input pins of the GPIO. User can either use the prebuilt project from the repository or can build a project using the steps mentioned below. The following steps illustrates the detailed procedure to setup, starting from creating a project to running the python script for verification.
 
 ### Step1: Create a project
 
@@ -59,7 +59,7 @@ Genesis_demo/Test_demo/PYNQ folder is prebuilt with a test project. The test pro
 
 This step is to create a design to generate a programmable file to configure FPGA on the PYNQ board.
 
-- To create the design file click on "Create a diagram window" by clicking "Create Block design" as shown below
+- To create the design file, click "Create Block design" as shown below
 
 <img src="Images/Create_board.PNG">
 
@@ -70,8 +70,8 @@ This step is to create a design to generate a programmable file to configure FPG
 <img src="Images/Zynq_add.PNG" width="600">
 </p>
 
-- Click on "Run Block Automation" on the top of the "Diagram" window highlited in green. This automatically adds the appropriate ports that need to be connected to the processor 
-- Double click on the Zynq processor block to chnage the configurations/settings. Enable the GPIOs by selecting the EMIO check box under the MIO_Configuration>> IO_peripherals>> GPIO section as illustrated in the figure below. Set the GPIO width to 8
+- Click on "Run Block Automation" on the top of the "Diagram" window highlited in green. This automatically adds the appropriate ports that needs to be connected to the processor 
+- Double click on the Zynq processor block to chnage the configurations/settings. Enable the GPIOs by selecting the EMIO check box under the MIO_Configuration>> IO_peripherals>> GPIO section as illustrated in the figure below and set the GPIO width to 8
 
 
 <p align="center">
@@ -97,7 +97,9 @@ Final step is to program the ARM processor on PYNQ board
 
 <img src="Images/Test_code.PNG">
 
-- The code basically writes "1011" to the four GPIO pins of the processor and reads the output of the basic gates
-- The 4 outputs of the processor are currently connected to one 4-input AND gates and three 4-input XOR gate
+- The code basically writes "1011" to the four input GPIO pins of the processor and reads the output of the basic gates
+- The 4 outputs of the processor are currently connected to one 4-input AND gate and three 4-input XOR gates
 - After executing the GPIO read function, the processor reads "1110" which is the output of the gates connected to the GPIO
+
+On sucessfully reading the input gpio pins "1110", user can confirm complete setup of the PYNQ board. 
 
