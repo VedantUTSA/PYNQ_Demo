@@ -1,6 +1,6 @@
-# Genesis_demo
+# PYNQ-Z1 board setup
 ---
-Implementation of the Genesis accelerator on PYNQ board
+Complete guide to setup the PYNQ board
 
 # Prerequisite
 
